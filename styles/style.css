@@ -50,7 +50,9 @@ button{
 }
 
 #property-display{
-    transform: translateX(500%);
+    transform: translateX(-100%);
+    transition-duration: 500ms;
+    margin-top: 10px;
 }
 
 #blob-space{
@@ -74,18 +76,35 @@ input{
     font-size: 25px;
 }
 
-#emote{
+#emote-container{
     font-size:100px;
     animation: float 1s infinite;
     animation-timing-function: linear;
     animation-direction: alternate;
+    height: 100px;
 }
 @keyframes float{
     from{
-        transform: translateY(20%);
+        transform: translateY(-15%);
     }to{
-        transform: translateY(15%);
+        transform: translateY(0%);
     }
+}
+@keyframes jump{
+    from{
+        transform: translateY(0%);
+    }to{
+        transform: translateY(-30%);
+    }
+}
+
+#name-display{
+    font-size: 30px;
+}
+
+#name-container{
+    transition-duration: 500ms;
+    transform: translateY(-1000%);
 }
 
 
