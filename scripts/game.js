@@ -1,8 +1,6 @@
 const gameInterface = $("#game-interface").remove();
-$("#blob-space").css("transform","translateX(0%)");
 
-
-($("button")).on("click", function(){
+$("button").on("click", function(){
     $("#name-display").text($("#name").val());
     $("#name-container").css("transform","translateY(0%");
     $("#blob-color").attr("style",`fill:${$("#color").val()}`);
@@ -16,4 +14,14 @@ $("#blob-space").css("transform","translateX(0%)");
 
 const eraseExcla = function(){
     $("#emote").text("");
+}
+
+const rightRotate = function(){
+    $("#blob").css("transform-origin", "right");
+    $("#blob").css("animation", "rotate 1s linear forwards");
+}
+
+const leftRotate = function(){
+    $("#blob").css("transform-origin", "left");
+    $("#blob").css("animation", "rotate 1s linear forwards");
 }

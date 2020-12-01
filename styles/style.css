@@ -130,5 +130,15 @@ input{
     transform: translateY(-1000%);
 }
 
+#blob{
+
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(180deg);
+    }
+}
 
 
