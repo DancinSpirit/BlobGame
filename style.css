@@ -7,4 +7,25 @@
 body{
     background-color:#1f1f1f;
     color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nerko One', cursive;
+    height: 100vh;
 }
+
+#title{
+    font-size: 50px;
+}
+
+#subtitle{
+    font-size: 30px;
+}
+
+button{
+    margin-top: 20px;
+}
+
+
+
