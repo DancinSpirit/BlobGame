@@ -1,4 +1,7 @@
 const gameInterface = $("#game-interface").remove();
+$("#blob-space").css("transform","translateX(0%)");
+
+
 ($("button")).on("click", function(){
     $("#name-display").text($("#name").val());
     $("#name-container").css("transform","translateY(0%");

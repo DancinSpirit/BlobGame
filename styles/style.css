@@ -37,6 +37,9 @@ button{
 #subtitle{
     font-size: 30px;
 }
+#title-container{
+    transition-duration: 1000ms;
+}
 
 /* Game */
 .divide{
@@ -56,14 +59,34 @@ button{
 }
 
 #blob-space{
+    transition-duration: 1000ms;
     left: 0;
     transform: translateY(-12%);
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
 #blob-initialization{
+    transition-duration: 1000ms;
     right: 0;
     transform: translateX(-15%);
+    animation: 1s ease-out 0s 1 slideInFromRight;
 }
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-15%);
+    }
+  }
 
 #game-interface{
     right: 0;
