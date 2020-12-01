@@ -23,8 +23,20 @@ body{
     font-size: 30px;
 }
 
-button{
+#start-button{
     margin-top: 20px;
+}
+
+.divide{
+    width: 50%;    
+}
+
+#blob-space{
+    left: 0;
+}
+
+#game-interface{
+    right: 0;
 }
 
 
