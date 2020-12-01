@@ -20,7 +20,7 @@ The user can click on "Play with me!" to play with their blob. This will trigger
 The user can click on "Feed me!" to feed their blob. This will cause hunger to go down by 1.
 
 **Resting**
-The user can click on "Nap time!" to put the blob to sleep. The blob will roll upside down to reflect this. While the blob is asleep: Boredom will not increase. Exhaustion will lower by 1 every 5 seconds. Hunger will function as normal.
+The user can click on "Nap time!" to put the blob to sleep. The blob will roll upside down to reflect this. The "Nap time!" button will change to "Wake Up!". While the blob is asleep: Boredom will not increase. Exhaustion will lower by 1 every 5 seconds. Hunger will function as normal. The blob will naturally wake up after exhaustion has reached 0. The user can also click "Wake Up!" at any time to force the blob awake.
 
 The game will continue to function for as long as no property reaches 10. As soon as any property reaches 10 the blob dies. The blob will slowly shrink into nothing and the User will be shown the message: [Insert Name Here] has died! The user will then be able to click an affirmation button to return to the Title Screen.
 
