@@ -13,8 +13,14 @@ body{
     align-items: center;
     font-family: 'Nerko One', cursive;
     height: 100vh;
+    overflow:hidden;
 }
 
+p{
+    display:inline;
+}
+
+/* TitleScreen */
 #title{
     font-size: 50px;
 }
@@ -27,16 +33,42 @@ body{
     margin-top: 20px;
 }
 
+/* Game */
 .divide{
     width: 50%;    
 }
 
+.property{
+    display: inline;
+    padding: 7px;
+    font-size: 25px;
+}
+
+#property-display{
+    transform: translateX(500%);
+}
+
 #blob-space{
     left: 0;
+    transform: translateY(-15%);
 }
 
 #game-interface{
     right: 0;
+}
+
+#emote{
+    font-size:100px;
+    animation: float 1s infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+@keyframes float{
+    from{
+        transform: translateY(20%);
+    }to{
+        transform: translateY(15%);
+    }
 }
 
 
