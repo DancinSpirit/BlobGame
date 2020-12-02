@@ -133,16 +133,34 @@ input{
     transform: translateY(-1000%);
 }
 
-#blob{
+/* #blob{
 
 }
-@keyframes rotate{
-    from{
+@keyframes leftrotate{
+    0%{
+        transform-origin: left;
         transform: rotate(0deg);
-    }to{
-        transform: rotate(180deg);
+    }50%{
+        transform-origin: left;
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0deg);
     }
 }
+@keyframes rightrotate{
+    0%{
+        transform-origin: right;
+        transform: rotate(0deg);
+    }50%{
+        transform-origin: right;
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+} */
+
 
 .interact{
     width: 200px;
