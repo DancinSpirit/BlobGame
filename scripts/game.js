@@ -7,6 +7,10 @@ let age = 0;
 let sleeping = false;
 let dead = false;
 
+$("#color").on("input", function(){
+    $("#blob-color").attr("style",`fill:${$("#color").val()}`);
+})
+
 $("#create-blob").on("click", function(){
     $("#name-display").text($("#name").val());
     $("#name-container").css("transform","translateY(0%");
