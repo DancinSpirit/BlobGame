@@ -6,6 +6,9 @@ let boredom = 0;
 let age = 0;
 let sleeping = false;
 let dead = false;
+let spiky = 0;
+let purple = 0;
+let colorful = 0;
 
 $("#color").on("input", function(){
     $("#blob-color").attr("style",`fill:${$("#color").val()}`);

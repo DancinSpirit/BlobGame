@@ -220,3 +220,7 @@ input{
     width: 310px;
 }
 
+#food-selection{
+    position: absolute;
+    bottom: 10vh;
+}
