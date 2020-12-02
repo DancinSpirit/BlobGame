@@ -43,6 +43,10 @@ const update = function(){
     setTimeout(function(){
         $("#blob").remove();
         $("<p id=death> is dead!</p>").insertBefore($("#emote-container"));
+        $("<div><button id='playagain'>Play Again?</button></div>").insertBefore($("#emote-container"));
+        $("#playagain").on("click",function(){
+            window.open("index.html","_self");
+        })
     },10000)
     }
     if(boredom<0){
