@@ -64,6 +64,7 @@ const update = function(){
     }
     if(exhaustion===0&&sleeping){
         $("#sleep").text("Nap time!"); 
+        timer=0;
         wakeAnimation();
         sleeping = false;
     }
@@ -131,6 +132,7 @@ const sleep = function(){
     }
     else{
     $("#sleep").text("Nap time!");  
+    timer=0;
     wakeAnimation();
     sleeping = false;  
     }
