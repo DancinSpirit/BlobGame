@@ -73,7 +73,7 @@ button{
     }
   }
 
-#blob-initialization{
+.slide-right{
     transition-duration: 1000ms;
     right: 0;
     transform: translateX(-15%);
@@ -89,7 +89,11 @@ button{
   }
 
 #game-interface{
-    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 66%;
+    align-items: center;
 }
 
 label{
@@ -139,6 +143,10 @@ input{
     }to{
         transform: rotate(180deg);
     }
+}
+
+.interact{
+    width: 200px;
 }
 
 
