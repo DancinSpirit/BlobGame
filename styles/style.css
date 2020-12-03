@@ -289,3 +289,6 @@ button:active {
 #right-sting{
     transform: translate(20px,65px);
 }
+#right-sting{
+    transform: translate(-20px,65px);
+}
