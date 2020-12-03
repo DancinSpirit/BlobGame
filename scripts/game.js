@@ -156,7 +156,7 @@ const rightStingSpawn = function(){
 }
 const leftStingSpawn = function(){
     $(".stinger-left").css("visibility","visible");
-    $(".stinger-left").css("transform","rotate(0deg)");
+    $(".stinger-left").css("transform","translate(0px,0px)");
     $("#left-sting").css("visibility","hidden");
     setTimeout(function(){
         $("#left-sting").css("visibility","visible");

@@ -285,10 +285,13 @@ button:active {
 .stinger-right{
     transform: rotate(40deg);
 }
+.stinger-left{
+    transform: translate(20px,45px);
+}
 
 #right-sting{
     transform: translate(20px,65px);
 }
-#right-sting{
+#left-sting{
     transform: translate(-20px,65px);
 }
