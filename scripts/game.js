@@ -25,17 +25,27 @@ $("#color").on("input", function(){
 })
 
 $("#spiky").on("click", function(){
+    if(!sleeping)
     spiky++;
 })
 $("#purple").on("click", function(){
+    if(!sleeping)
     purple++;
 })
 $("#colorful").on("click", function(){
+    if(!sleeping)
     colorful++;
 })
 $(".food-button").on("click", function(){
+    if(!sleeping){
     hunger=hunger-2;
     $("#food-selection").css("transform","translateX(1000%)");
+    }
+    else{
+        $("#emote").text("Zzz");
+        setTimeout(resetEmote,2000);
+        }
+    updateText();
 })
 
 $("#create-blob").on("click", function(){
