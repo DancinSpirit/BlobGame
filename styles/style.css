@@ -262,10 +262,6 @@ button:active {
     fill: white;
 }
 
-.eyes{
-    z-index: 1;
-}
-
 .appendage{
     transition-duration: 2000ms; 
 }
@@ -276,4 +272,20 @@ button:active {
 
 .eye-left{
     transform: translate(6px,6px);
+}
+
+.pom-left{
+    transform: translateY(50px);
+}
+
+.pom-right{
+    transform: translateY(50px);
+}
+
+.stinger-right{
+    transform: rotate(40deg);
+}
+
+#right-sting{
+    transform: translate(20px,65px);
 }

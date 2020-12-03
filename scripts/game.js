@@ -124,31 +124,49 @@ const update = function(){
 }
 }
 
-const eyeRightSpawn = function(){
-    $(".eye-right").css("visibility","visible");
-    $(".eye-right").css("transform", "translate(0px, 0px");
+const eyeSpawn = function(eye){
+    eye.css("visibility","visible");
+    eye.css("transform", "translate(0px, 0px");
 }
-const eyeLeftSpawn = function(){
-    $(".eye-left").css("visibility","visible");
-    $(".eye-left").css("transform", "translate(0px, 0px");
+const pomSpawn = function(pom){
+    pom.css("visibility","visible");
+    pom.css("transform", "translateY(3px");
+}
+const rightStingSpawn = function(){
+    $(".stinger-right").css("visibility","visible");
+    $(".stinger-right").css("transform","rotate(0deg)");
+    $("#right-sting").css("visibility","hidden");
+    setTimeout(function(){
+        $("#right-sting").css("visibility","visible");
+        $("#right-sting").css("transform","translate(0px,0px)")   
+    },1200);
+}
+const leftStingSpawn = function(){
+    $(".stinger-left").css("visibility","visible");
+    $(".stinger-left").css("transform","rotate(0deg)");
+    $("#left-sting").css("visibility","hidden");
+    setTimeout(function(){
+        $("#left-sting").css("visibility","visible");
+        $("#left-sting").css("transform","translate(0px,0px)")   
+    },1200);
 }
 
 const morph1 = function(){
     if(colorful>spiky&&colorful>purple)
-        eyeRightSpawn();
+        eyeSpawn($(".eye-right"));
     else if(spiky>colorful&&spiky>purple)
-        $(".stinger-right").css("visibility","visible");
+    rightStingSpawn();
     else if(purple>colorful&&purple>spiky)
-        $(".pom-right").css("visibility","visible");
+        pomSpawn($(".pom-right"));
     else{
         let rndm = Math.random()*3;
         if(rndm<1){
-            eyeRightSpawn();
+            eyeSpawn($(".eye-right"));
         }
         else if(rndm<2)
-            $(".stinger-right").css("visibility","visible");
+            rightStingSpawn();
         else
-            $(".pom-right").css("visibility","visible");
+            pomSpawn($(".pom-right"));
     }
     spiky=0;
     colorful=0;
@@ -158,20 +176,20 @@ const morph1 = function(){
 
 const morph2 = function(){
     if(colorful>spiky&&colorful>purple)
-        eyeLeftSpawn();
+        eyeSpawn($(".eye-left"));
     else if(spiky>colorful&&spiky>purple)
-        $(".stinger-left").css("visibility","visible");
+        leftStingSpawn();
     else if(purple>colorful&&purple>spiky)
-        $(".pom-left").css("visibility","visible");
+        pomSpawn($(".pom-left"));
     else{
         let rndm = Math.random()*3;
         if(rndm<1){
-            eyeLeftSpawn();
+            eyeSpawn($(".eye-left"));
         }
         else if(rndm<2)
-            $(".stinger-left").css("visibility","visible");
+            leftStingSpawn();
         else
-            $(".pom-left").css("visibility","visible");
+            pomSpawn($(".pom-left"));
     }
     secondMorph = true;
 }
