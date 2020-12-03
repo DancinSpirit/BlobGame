@@ -262,3 +262,18 @@ button:active {
     fill: white;
 }
 
+.eyes{
+    z-index: 1;
+}
+
+.appendage{
+    transition-duration: 2000ms; 
+}
+
+.eye-right{
+    transform: translate(-6px,6px);
+}
+
+.eye-left{
+    transform: translate(6px,6px);
+}

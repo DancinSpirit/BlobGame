@@ -15,6 +15,9 @@ let stingerRight = $("#stinger-left");
 let eyeLeft = $("#eye-left");
 let pomLeft = $("#pom-left");
 let stingerLeft = $("#stinger-left");
+let firstMorph = false;
+let secondmorph = false;
+
 $(".appendage").css("visibility","hidden");
 
 $("#color").on("input", function(){
@@ -112,7 +115,7 @@ const update = function(){
         age++;
     }
     updateText();
-    if(age===2){
+    if(age===2&&!firstMorph){
         morph1();
     }
     if(age===4){
@@ -121,9 +124,18 @@ const update = function(){
 }
 }
 
+const eyeRightSpawn = function(){
+    $(".eye-right").css("visibility","visible");
+    $(".eye-right").css("transform", "translate(0px, 0px");
+}
+const eyeLeftSpawn = function(){
+    $(".eye-left").css("visibility","visible");
+    $(".eye-left").css("transform", "translate(0px, 0px");
+}
+
 const morph1 = function(){
     if(colorful>spiky&&colorful>purple)
-        $(".eye-right").css("visibility","visible");
+        eyeRightSpawn();
     else if(spiky>colorful&&spiky>purple)
         $(".stinger-right").css("visibility","visible");
     else if(purple>colorful&&purple>spiky)
@@ -131,7 +143,7 @@ const morph1 = function(){
     else{
         let rndm = Math.random()*3;
         if(rndm<1){
-            $(".eye-right").css("visibility","visible");
+            eyeRightSpawn();
         }
         else if(rndm<2)
             $(".stinger-right").css("visibility","visible");
@@ -141,10 +153,12 @@ const morph1 = function(){
     spiky=0;
     colorful=0;
     purple=0;
+    firstMorph = true;
 }
+
 const morph2 = function(){
     if(colorful>spiky&&colorful>purple)
-        $(".eye-left").css("visibility","visible");
+        eyeLeftSpawn();
     else if(spiky>colorful&&spiky>purple)
         $(".stinger-left").css("visibility","visible");
     else if(purple>colorful&&purple>spiky)
@@ -152,13 +166,14 @@ const morph2 = function(){
     else{
         let rndm = Math.random()*3;
         if(rndm<1){
-            $(".eye-left").css("visibility","visible");
+            eyeLeftSpawn();
         }
         else if(rndm<2)
             $(".stinger-left").css("visibility","visible");
         else
             $(".pom-left").css("visibility","visible");
     }
+    secondMorph = true;
 }
 
 const updateText = function(){
