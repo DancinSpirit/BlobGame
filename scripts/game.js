@@ -83,10 +83,13 @@ const update = function(){
     setTimeout(function(){
         $("#game-interface").css("width","0");
         $("#emote-container").css("height","0");
-        $("#svg-section").css("height","0");
+        $("#svg-section").css("transition-duration","10000ms");
+        $("#svg-section").css("height","50px");
         $(".interact").remove();
     },100);
     setTimeout(function(){
+        $("#svg-section").css("transition-duration","0ms");
+        $("#svg-section").css("height","0px");
         $("#blob").remove();
         $("<p id=death> is dead!</p>").insertBefore($("#emote-container"));
         $("<div><button id='playagain'>Play Again?</button></div>").insertBefore($("#emote-container"));
@@ -148,19 +151,19 @@ const morph3 = function(){
     setTimeout(function(){
         $("#game-interface").css("width","0");
         $("#emote-container").css("height","0");
-        $("#blob").css("visibility","hidden");
         $("#svg-section").css("height","600px");
         $("#final-form").css("visibility","visible");
+        $("#final-form").addClass("spin-in");
         $(".interact").remove();
+        $("#blob").addClass("spin-out");
     },100);
     setTimeout(function(){
-        $("#blob").remove();
         $("<p id=death> has fully evolved!</p>").insertBefore($("#emote-container"));
-        $("<div><button id='playagain'>Play Again?</button></div>").insertBefore($("#emote-container"));
+        $("<div><button id='playagain'>Play Again?</button></div>").insertBefore($("#property-display"));
         $("#playagain").on("click",function(){
             window.open("index.html","_self");
         })
-    },10000)
+    },1000)
 }
 
 const eyeSpawn = function(eye){

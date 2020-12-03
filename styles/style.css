@@ -203,6 +203,32 @@ input{
     }
 }
 
+.spin-out{
+    animation: spinout 1 1s linear forwards;
+}
+@keyframes spinout{
+    from{
+        transform: rotate(0deg);
+        opacity: 1;
+    }to{
+        transform: rotate(3600deg);
+        opacity: 0;
+    }            
+}
+
+.spin-in{
+    animation: spinin 1 1s linear forwards;
+}
+@keyframes spinin{
+    from{
+        transform: rotate(0deg);
+        opacity: 0;
+    }to{
+        transform: rotate(3600deg);
+        opacity: 1;
+    }            
+}
+
 .interact{
     width: 200px;
 }
@@ -255,6 +281,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-duration: 1000ms;
 }
 
 #sclera{
