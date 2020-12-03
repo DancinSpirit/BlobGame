@@ -141,7 +141,25 @@ const update = function(){
 }
 
 const morph3 = function(){
-    
+    dead = true;
+    $("#food-selection").css("transform","translateX(1000%)");
+    $("#game-interface").css("transform","translateX(500%");
+    $("#property-display").css("transform","translateX(-200%");
+    setTimeout(function(){
+        $("#game-interface").css("width","0");
+        $("#emote-container").css("height","0");
+        $("#blob").css("visibility","hidden");
+        $("#final-form").css("visibility","visible");
+        $(".interact").remove();
+    },100);
+    setTimeout(function(){
+        $("#blob").remove();
+        $("<p id=death> is dead!</p>").insertBefore($("#emote-container"));
+        $("<div><button id='playagain'>Play Again?</button></div>").insertBefore($("#emote-container"));
+        $("#playagain").on("click",function(){
+            window.open("index.html","_self");
+        })
+    },10000)
 }
 
 const eyeSpawn = function(eye){

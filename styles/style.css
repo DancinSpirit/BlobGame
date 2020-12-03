@@ -252,10 +252,9 @@ button:active {
 
 #svg-section{
     height: 200px;
-}
-
-#blob{
-    transform: translateY(-25%);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #sclera{
@@ -294,4 +293,10 @@ button:active {
 }
 #left-sting{
     transform: translate(-20px,65px);
+}
+
+#final-form{
+    transition: ease 1000ms;
+    visibility: hidden; 
+    position: absolute;
 }
