@@ -14,6 +14,20 @@ $("#color").on("input", function(){
     $("#blob-color").attr("style",`fill:${$("#color").val()}`);
 })
 
+$("#spiky").on("click", function(){
+    spiky++;
+})
+$("#purple").on("click", function(){
+    purple++;
+})
+$("#colorful").on("click", function(){
+    colorful++;
+})
+$(".food-button").on("click", function(){
+    hunger=hunger-2;
+    $("#food-selection").css("transform","translateX(1000%)");
+})
+
 $("#create-blob").on("click", function(){
     $("#name-display").text($("#name").val());
     $("#name-container").css("transform","translateY(0%");
@@ -40,6 +54,7 @@ const update = function(){
     if(boredom>9||age>9||hunger>9||exhaustion>9){
     die();
     dead = true;
+    $("#food-selection").css("transform","translateX(1000%)");
     $("#game-interface").css("transform","translateX(500%");
     $("#property-display").css("transform","translateX(-200%");
     setTimeout(function(){
@@ -119,8 +134,9 @@ const play = function(){
     updateText();
 }
 const feed = function(){
-    if(!sleeping)
-    hunger--;
+    if(!sleeping){
+        $("#food-selection").css("transform","translateX(0%)");
+    }
     else{
         $("#emote").text("Zzz");
         setTimeout(resetEmote,2000);

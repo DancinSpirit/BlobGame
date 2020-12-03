@@ -24,11 +24,6 @@ p{
     fill:#a0a0a0;
 }
 
-button{
-    font-size: 20px;
-    margin-top: 20px;
-}
-
 /* TitleScreen */
 #title{
     font-size: 50px;
@@ -141,14 +136,14 @@ input{
 @keyframes leftrotate{
     0%{
         transform-origin: left;
-        transform: rotate(0deg);
+        transform: translateY(-25%) rotate(0deg);
     }50%{
         transform-origin: left;
-        transform: rotate(-183deg);
+        transform: translateY(-25%) rotate(-183deg);
     }
     100%{
         transform-origin: left;
-        transform: rotate(0deg);
+        transform: translateY(-25%) rotate(0deg);
     }
 }
 
@@ -158,14 +153,14 @@ input{
 @keyframes rightrotate{
     0%{
         transform-origin: right;
-        transform: rotate(0deg);
+        transform: translateY(-25%) rotate(0deg);
     }50%{
         transform-origin: right;
-        transform: rotate(183deg);
+        transform: translateY(-25%) rotate(183deg);
     }
     100%{
         transform-origin: right;
-        transform: rotate(0deg);
+        transform: translateY(-25%) rotate(0deg);
     }
 }
 
@@ -176,10 +171,10 @@ input{
     0%{
     }
     50%{
-        transform: translateY(-75px) rotate(360deg);
+        transform: translateY(-45%) rotate(360deg);
     }
     100%{
-        transform: translateY(0px) rotate(540deg);
+        transform: translateY(-25%)  rotate(540deg);
     }
 }
 
@@ -188,13 +183,13 @@ input{
 }
 @keyframes wakeup{
     0%{
-        transform: translateY(0px) rotate(540deg); 
+        transform: translateY(-25%)  rotate(540deg); 
     }
     50%{
-        transform: translateY(-75px) rotate(360deg); 
+        transform: translateY(-45%)  rotate(360deg); 
     }
     100%{
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(-25%)  rotate(0deg);
     }
 }
 
@@ -223,4 +218,42 @@ input{
 #food-selection{
     position: absolute;
     bottom: 10vh;
+    transform: translateX(1000%);
+    transition-duration: 1000ms;
+}
+
+button {
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:'Nerko One',cursive;
+	font-size:25px;
+	padding:6px 13px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    margin-top: 10px;
+}
+button:hover {
+	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color:#415989;
+}
+button:active {
+	position:relative;
+    top:1px;
+}
+
+#food-prompt{
+    font-size: 30px;
+}
+
+#svg-section{
+    height: 200px;
+}
+
+#blob{
+    transform: translateY(-25%);  
 }
