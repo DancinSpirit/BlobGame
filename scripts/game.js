@@ -9,9 +9,13 @@ let dead = false;
 let spiky = 0;
 let purple = 0;
 let colorful = 0;
+let eyeRight;
+let pomRight;
+let stingerRight;
+$(".appendage").css("visibility","hidden");
 
 $("#color").on("input", function(){
-    $("#blob-color").attr("style",`fill:${$("#color").val()}`);
+    $(".blob-color").css("fill",$("#color").val());
 })
 
 $("#spiky").on("click", function(){
@@ -31,7 +35,7 @@ $(".food-button").on("click", function(){
 $("#create-blob").on("click", function(){
     $("#name-display").text($("#name").val());
     $("#name-container").css("transform","translateY(0%");
-    $("#blob-color").attr("style",`fill:${$("#color").val()}`);
+    $(".blob-color").css("fill",$("#color").val());
     $("#blob-initialization").remove();
     $("body").append(gameInterface);
     $("#property-display").css("transform","translateX(0%)");
@@ -47,6 +51,9 @@ $("#create-blob").on("click", function(){
 const gameStart = function(){
     $("#emote").text("");
     setInterval(update, 500);
+    eyeRight = $(".eye-right").remove();
+    pomRight = $(".pom-right").remove();
+    stingerRight = $(".stinger-right").remove();
 }
 
 const update = function(){
@@ -60,6 +67,7 @@ const update = function(){
     setTimeout(function(){
         $("#game-interface").css("width","0");
         $("#emote-container").css("height","0");
+        $("#svg-section").css("height","0");
         $(".interact").remove();
     },100);
     setTimeout(function(){
@@ -100,11 +108,52 @@ const update = function(){
         if(!sleeping)
         exhaustion++;
     }
-    if(timer%60===0){
+    if(timer%30===0){
         age++;
     }
     updateText();
+    if(age===2){
+        morph1();
+    }
+    if(age===4){
+        morph2();
+    }
 }
+}
+
+const morph1 = function(){
+    if(colorful>spiky&&colorful>purple)
+    for(let x=0; x<eyeRight.length; x++){
+        $("#blob").append(eyeRight[x]);
+        $(".eye-right").css("visibility","visible");
+    }
+    if(spiky>colorful&&spiky>purple)
+    for(let x=0; x<eyeRight.length; x++){
+        $("#blob").append(stingerRight[x]);
+        $(".stinger-right").css("visibility","visible");
+    }
+    if(purple>colorful&&purple>spiky)
+    for(let x=0; x<eyeRight.length; x++){
+        $("#blob").append(pomRight[x]);
+        $(".pom-right").css("visibility","visible");
+    }
+}
+const morph2 = function(){
+    if(colorful>spiky&&colorful>purple)
+    for(let x=0; x<eyeLeft.length; x++){
+        $("#blob").append(eyeLeft[x]);
+        $(".eye-left").css("visibility","visible");
+    }
+    if(spiky>colorful&&spiky>purple)
+    for(let x=0; x<eyeLeft.length; x++){
+        $("#blob").append(stingerLeft[x]);
+        $(".stinger-left").css("visibility","visible");
+    }
+    if(purple>colorful&&purple>spiky)
+    for(let x=0; x<eyeLeft.length; x++){
+        $("#blob").append(pomLeft[x]);
+        $(".pom-left").css("visibility","visible");
+    }
 }
 
 const updateText = function(){

@@ -20,7 +20,7 @@ p{
     display:inline;
 }
 
-#blob-color{
+.blob-color{
     fill:#a0a0a0;
 }
 
@@ -257,3 +257,8 @@ button:active {
 #blob{
     transform: translateY(-25%);  
 }
+
+#sclera{
+    fill: white;
+}
+
