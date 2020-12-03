@@ -9,9 +9,12 @@ let dead = false;
 let spiky = 0;
 let purple = 0;
 let colorful = 0;
-let eyeRight;
-let pomRight;
-let stingerRight;
+let eyeRight = $("#eye-right");
+let pomRight = $("#pom-right");
+let stingerRight = $("#stinger-left");
+let eyeLeft = $("#eye-left");
+let pomLeft = $("#pom-left");
+let stingerLeft = $("#stinger-left");
 $(".appendage").css("visibility","hidden");
 
 $("#color").on("input", function(){
@@ -51,9 +54,6 @@ $("#create-blob").on("click", function(){
 const gameStart = function(){
     $("#emote").text("");
     setInterval(update, 500);
-    eyeRight = $(".eye-right").remove();
-    pomRight = $(".pom-right").remove();
-    stingerRight = $(".stinger-right").remove();
 }
 
 const update = function(){
@@ -123,36 +123,41 @@ const update = function(){
 
 const morph1 = function(){
     if(colorful>spiky&&colorful>purple)
-    for(let x=0; x<eyeRight.length; x++){
-        $("#blob").append(eyeRight[x]);
         $(".eye-right").css("visibility","visible");
-    }
-    if(spiky>colorful&&spiky>purple)
-    for(let x=0; x<eyeRight.length; x++){
-        $("#blob").append(stingerRight[x]);
+    else if(spiky>colorful&&spiky>purple)
         $(".stinger-right").css("visibility","visible");
-    }
-    if(purple>colorful&&purple>spiky)
-    for(let x=0; x<eyeRight.length; x++){
-        $("#blob").append(pomRight[x]);
+    else if(purple>colorful&&purple>spiky)
         $(".pom-right").css("visibility","visible");
+    else{
+        let rndm = Math.random()*3;
+        if(rndm<1){
+            $(".eye-right").css("visibility","visible");
+        }
+        else if(rndm<2)
+            $(".stinger-right").css("visibility","visible");
+        else
+            $(".pom-right").css("visibility","visible");
     }
+    spiky=0;
+    colorful=0;
+    purple=0;
 }
 const morph2 = function(){
     if(colorful>spiky&&colorful>purple)
-    for(let x=0; x<eyeLeft.length; x++){
-        $("#blob").append(eyeLeft[x]);
         $(".eye-left").css("visibility","visible");
-    }
-    if(spiky>colorful&&spiky>purple)
-    for(let x=0; x<eyeLeft.length; x++){
-        $("#blob").append(stingerLeft[x]);
+    else if(spiky>colorful&&spiky>purple)
         $(".stinger-left").css("visibility","visible");
-    }
-    if(purple>colorful&&purple>spiky)
-    for(let x=0; x<eyeLeft.length; x++){
-        $("#blob").append(pomLeft[x]);
+    else if(purple>colorful&&purple>spiky)
         $(".pom-left").css("visibility","visible");
+    else{
+        let rndm = Math.random()*3;
+        if(rndm<1){
+            $(".eye-left").css("visibility","visible");
+        }
+        else if(rndm<2)
+            $(".stinger-left").css("visibility","visible");
+        else
+            $(".pom-left").css("visibility","visible");
     }
 }
 
