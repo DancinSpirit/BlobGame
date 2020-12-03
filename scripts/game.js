@@ -134,7 +134,14 @@ const update = function(){
     if(age===4){
         morph2();
     }
+    if(age===6){
+        morph3();
+    }
 }
+}
+
+const morph3 = function(){
+    
 }
 
 const eyeSpawn = function(eye){

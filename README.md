@@ -22,7 +22,9 @@ The user can click on "Feed me!" to feed their blob. A list of choices for food 
 **Resting**
 The user can click on "Nap time!" to put the blob to sleep. The blob will roll upside down to reflect this. The "Nap time!" button will change to "Wake Up!". While the blob is asleep: Boredom will not increase. Exhaustion will lower by 1 every 5 seconds. Hunger will function as normal. The blob will naturally wake up after exhaustion has reached 0. The user can also click "Wake Up!" at any time to force the blob awake.
 
-When a blob goes up in age it will develop a new appendage. The appendage will be different depending on what type of food was fed to it most.
+When a blob goes up in age it will develop a new appendage. The appendage will be different depending on what type of food was fed to it most. This will happen at age 2 and again at age 4.
 
-The game will continue to function for as long as no property reaches 10 (including age). As soon as any property reaches 10 the blob dies. The blob will slowly shrink into nothing and the User will be shown the message: [Insert Name Here] has died! The user will then be able to click an affirmation button to return to the Title Screen.
+At age 6 the blob will evolve into a creature based on it's two prior developments. The interface will slide off the screen and the game will focus in on the blob which will spin and fade into it's new form. A message will congratulate the user and the new being will go off into the wild, successfully raised.
+
+The game will continue to function for as long as no property reaches 10. As soon as any property reaches 10 the blob dies. The blob will slowly shrink into nothing and the User will be shown the message: [Insert Name Here] has died! The user will then be able to click an affirmation button to return to the Title Screen.
 
