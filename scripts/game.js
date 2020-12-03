@@ -17,6 +17,7 @@ let pomLeft = $("#pom-left");
 let stingerLeft = $("#stinger-left");
 let firstMorph = false;
 let secondmorph = false;
+let animationRunning = false;
 
 $(".appendage").css("visibility","hidden");
 
@@ -25,18 +26,19 @@ $("#color").on("input", function(){
 })
 
 $("#spiky").on("click", function(){
-    if(!sleeping)
+    if(!sleeping&&!animationRunning)
     spiky++;
 })
 $("#purple").on("click", function(){
-    if(!sleeping)
+    if(!sleeping&&!animationRunning)
     purple++;
 })
 $("#colorful").on("click", function(){
-    if(!sleeping)
+    if(!sleeping&&!animationRunning)
     colorful++;
 })
 $(".food-button").on("click", function(){
+    if(!animationRunning){
     if(!sleeping){
     hunger=hunger-2;
     $("#food-selection").css("transform","translateX(1000%)");
@@ -46,6 +48,7 @@ $(".food-button").on("click", function(){
         setTimeout(resetEmote,2000);
         }
     updateText();
+    }
 })
 
 $("#create-blob").on("click", function(){
@@ -220,6 +223,7 @@ const updateText = function(){
     $("#age").text(age);
 }
 const play = function(){
+    if(!animationRunning){
     if(!sleeping){
     boredom= boredom-3;
     exhaustion++;
@@ -230,7 +234,9 @@ const play = function(){
     }
     updateText();
 }
+}
 const feed = function(){
+    if(!animationRunning){
     if(!sleeping){
         $("#food-selection").css("transform","translateX(0%)");
     }
@@ -239,8 +245,10 @@ const feed = function(){
         setTimeout(resetEmote,2000);
         }
     updateText();
+    }
 }
 const sleep = function(){
+    if(!animationRunning){
     if(!sleeping){
     $("#sleep").text("Wake Up!");
     sleepAnimation();
@@ -254,6 +262,7 @@ const sleep = function(){
     }
     updateText();
 }
+}
 
 const resetEmote = function(){
     $("#emote").text("");
@@ -264,16 +273,28 @@ const playAnimation = function(){
     $("#blob").addClass("rightrotation");
     setTimeout(reset,1000);
     $("#blob").addClass("leftrotation");
+    animationRunning = true;
+    setTimeout(function(){
+        animationRunning = false;
+    },2000);
 }
 
 const sleepAnimation = function(){
     reset();
     $("#blob").addClass("sleep");
+    animationRunning = true;
+    setTimeout(function(){
+        animationRunning = false;
+    },1000);
 }
 
 const wakeAnimation = function(){
     reset();
     $("#blob").addClass("wakeup");
+    animationRunning = true;
+    setTimeout(function(){
+        animationRunning = false;
+    },1000);
 }
 
 const die = function(){
