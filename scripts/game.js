@@ -149,12 +149,13 @@ const morph3 = function(){
         $("#game-interface").css("width","0");
         $("#emote-container").css("height","0");
         $("#blob").css("visibility","hidden");
+        $("#svg-section").css("height","600px");
         $("#final-form").css("visibility","visible");
         $(".interact").remove();
     },100);
     setTimeout(function(){
         $("#blob").remove();
-        $("<p id=death> is dead!</p>").insertBefore($("#emote-container"));
+        $("<p id=death> has fully evolved!</p>").insertBefore($("#emote-container"));
         $("<div><button id='playagain'>Play Again?</button></div>").insertBefore($("#emote-container"));
         $("#playagain").on("click",function(){
             window.open("index.html","_self");

@@ -136,14 +136,14 @@ input{
 @keyframes leftrotate{
     0%{
         transform-origin: left;
-        transform: translateY(-25%) rotate(0deg);
+        transform: rotate(0deg);
     }50%{
         transform-origin: left;
-        transform: translateY(-25%) rotate(-183deg);
+        transform: rotate(-183deg);
     }
     100%{
         transform-origin: left;
-        transform: translateY(-25%) rotate(0deg);
+        transform: rotate(0deg);
     }
 }
 
@@ -153,14 +153,14 @@ input{
 @keyframes rightrotate{
     0%{
         transform-origin: right;
-        transform: translateY(-25%) rotate(0deg);
+        transform: rotate(0deg);
     }50%{
         transform-origin: right;
-        transform: translateY(-25%) rotate(183deg);
+        transform: rotate(183deg);
     }
     100%{
         transform-origin: right;
-        transform: translateY(-25%) rotate(0deg);
+        transform: rotate(0deg);
     }
 }
 
@@ -171,10 +171,10 @@ input{
     0%{
     }
     50%{
-        transform: translateY(-45%) rotate(360deg);
+        transform: translateY(-40%) rotate(360deg);
     }
     100%{
-        transform: translateY(-25%)  rotate(540deg);
+        transform: translateY(0)  rotate(540deg);
     }
 }
 
@@ -183,13 +183,13 @@ input{
 }
 @keyframes wakeup{
     0%{
-        transform: translateY(-25%)  rotate(540deg); 
+        transform: translateY(0)  rotate(540deg); 
     }
     50%{
-        transform: translateY(-45%)  rotate(360deg); 
+        transform: translateY(-40%)  rotate(360deg); 
     }
     100%{
-        transform: translateY(-25%)  rotate(0deg);
+        transform: translateY(0)  rotate(0deg);
     }
 }
 
