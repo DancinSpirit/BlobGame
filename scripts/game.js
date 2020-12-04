@@ -16,7 +16,7 @@ let eyeLeft = $("#eye-left");
 let pomLeft = $("#pom-left");
 let stingerLeft = $("#stinger-left");
 let firstMorph = false;
-let secondmorph = false;
+let secondMorph = false;
 let animationRunning = false;
 let eyes = 0;
 let poms = 0;
@@ -153,6 +153,9 @@ const calculateFinalForm = function(){
     }
     if(eyes===2){
         $("#frog").addClass("final-form"); 
+    }
+    if(poms===2){
+        $("#octo").addClass("final-form"); 
     }
 }
 
