@@ -157,6 +157,12 @@ const calculateFinalForm = function(){
     if(poms===2){
         $("#octo").addClass("final-form"); 
     }
+    if(poms===1&&eyes===1){
+        $("#eye-monster").addClass("final-form"); 
+    }
+    if(poms===1&&stingers===1){
+        $("#jelly").addClass("final-form");
+    }
 }
 
 const morph3 = function(){
