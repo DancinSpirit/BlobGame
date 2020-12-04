@@ -18,6 +18,9 @@ let stingerLeft = $("#stinger-left");
 let firstMorph = false;
 let secondmorph = false;
 let animationRunning = false;
+let eyes = 0;
+let poms = 0;
+let stingers = 0;
 
 $(".appendage").css("visibility","hidden");
 
@@ -134,13 +137,23 @@ const update = function(){
     if(age===2&&!firstMorph){
         morph1();
     }
-    if(age===4){
+    if(age===4&&!secondMorph){
         morph2();
     }
     if(age===6){
+        calculateFinalForm();
         morph3();
     }
 }
+}
+
+const calculateFinalForm = function(){
+    if(stingers===2){
+        $("#scorpion").addClass("final-form");
+    }
+    if(eyes===2){
+        $("#frog").addClass("final-form"); 
+    }
 }
 
 const morph3 = function(){
@@ -152,8 +165,8 @@ const morph3 = function(){
         $("#game-interface").css("width","0");
         $("#emote-container").css("height","0");
         $("#svg-section").css("height","600px");
-        $("#final-form").css("visibility","visible");
-        $("#final-form").addClass("spin-in");
+        $(".final-form").css("visibility","visible");
+        $(".final-form-candidate").addClass("spin-in");
         $(".interact").remove();
         $("#blob").addClass("spin-out");
     },100);
@@ -169,10 +182,12 @@ const morph3 = function(){
 const eyeSpawn = function(eye){
     eye.css("visibility","visible");
     eye.css("transform", "translate(0px, 0px");
+    eyes++;
 }
 const pomSpawn = function(pom){
     pom.css("visibility","visible");
     pom.css("transform", "translateY(3px");
+    poms++;
 }
 const rightStingSpawn = function(){
     $(".stinger-right").css("visibility","visible");
@@ -182,6 +197,7 @@ const rightStingSpawn = function(){
         $("#right-sting").css("visibility","visible");
         $("#right-sting").css("transform","translate(0px,0px)")   
     },1200);
+    stingers++;
 }
 const leftStingSpawn = function(){
     $(".stinger-left").css("visibility","visible");
@@ -191,6 +207,7 @@ const leftStingSpawn = function(){
         $("#left-sting").css("visibility","visible");
         $("#left-sting").css("transform","translate(0px,0px)")   
     },1200);
+    stingers++;
 }
 
 const morph1 = function(){

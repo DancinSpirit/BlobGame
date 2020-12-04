@@ -322,7 +322,7 @@ button:active {
     transform: translate(-20px,65px);
 }
 
-#final-form{
+.final-form-candidate{
     transition: ease 1000ms;
     visibility: hidden; 
     position: absolute;
