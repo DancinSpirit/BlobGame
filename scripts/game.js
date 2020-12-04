@@ -163,6 +163,9 @@ const calculateFinalForm = function(){
     if(poms===1&&stingers===1){
         $("#jelly").addClass("final-form");
     }
+    if(eyes===1&&stingers===1){
+        $("#bee").addClass("final-form");
+    }
 }
 
 const morph3 = function(){
