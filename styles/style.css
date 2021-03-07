@@ -290,6 +290,7 @@ button:active {
 
 .appendage{
     transition-duration: 2000ms; 
+    visibility: hidden;
 }
 
 .eye-right{
