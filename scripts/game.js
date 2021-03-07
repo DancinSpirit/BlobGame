@@ -16,8 +16,6 @@ let eyes = 0;
 let poms = 0;
 let stingers = 0;
 
-$(".appendage").css("visibility","hidden");
-
 $("#color").on("input", function(){
     $(".blob-color").css("fill",$("#color").val());
 })
